@@ -6,3 +6,5 @@ pluggy==1.0.0
 pyparsing==3.0.9
 pytest==7.2.0
 tomli==2.0.1
+flask==3.0.0
+flask-login @ git+https://github.com/maxcountryman/flask-login.git@main

@@ -1,0 +1,39 @@
+### Login
+POST http://127.0.0.1:5000/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+
+### Logout
+GET http://localhost:5000/logout
+
+### Get all todo items
+GET http://127.0.0.1:5000/todos HTTP/1.1
+
+### Get a specific todo item by ID (change ID accordingly)
+GET http://127.0.0.1:5000/todos/1 HTTP/1.1
+
+### Add a new todo item (login-required)
+POST http://127.0.0.1:5000/todos HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Buy milk",
+    "is_completed": false
+}
+
+### Update a specific todo item by ID (change ID and fields accordingly) (login-required)
+PUT http://127.0.0.1:5000/todos/1
+Content-Type: application/json
+
+{
+  "title": "Buy almond milk",
+  "is_completed": true
+}
+
+### Delete a specific todo item by ID (change ID accordingly) (login-required)
+DELETE http://127.0.0.1:5000/todos/1
+
