@@ -1,0 +1,13 @@
+{
+  "files": [
+    "user.py",
+    "todoBlueprint.py",
+    "todoDao.py",
+    "todoItem.py",
+    "userBlueprint.py",
+    "userDao.py",
+    "main.py"
+  ],
+  "ignore": [],
+  "max": 5
+}
