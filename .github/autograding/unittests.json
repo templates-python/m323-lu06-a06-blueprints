@@ -1,0 +1,32 @@
+[
+  {
+    "name": "test_add_todo",
+    "function": "test_add_todo",
+    "timeout": 10,
+    "points": 1
+  },
+  {
+    "name": "test_delete_todo",
+    "function": "test_delete_todo",
+    "timeout": 10,
+    "points": 1
+  },
+  {
+    "name": "test_get_all_todos",
+    "function": "test_get_all_todos",
+    "timeout": 10,
+    "points": 1
+  },
+  {
+    "name": "test_login",
+    "function": "test_login",
+    "timeout": 10,
+    "points": 1
+  },
+  {
+    "name": "test_update_todo",
+    "function": "test_update_todo",
+    "timeout": 10,
+    "points": 1
+  }
+]
