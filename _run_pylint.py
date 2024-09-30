@@ -20,7 +20,11 @@ def get_gitignore_patterns():
     gitignore_path = Path('.gitignore')
     if gitignore_path.exists():
         with gitignore_path.open('r', encoding='utf-8') as gitignore_file:
-            patterns = [line.strip() for line in gitignore_file if line.strip() and not line.startswith('#')]
+            patterns = [
+                line.strip()
+                for line in gitignore_file
+                if line.strip() and not line.startswith('#')
+            ]
             return [convert_gitignore_to_regex(pattern) for pattern in patterns]
     return []
 
@@ -72,15 +76,22 @@ def main():
 
     # Get files to lint
     if config['files']:
-        files_to_lint = [file for file in config['files'] if
-                         not should_ignore(file, config['ignore'], gitignore_patterns)]
+        files_to_lint = [
+            file
+            for file in config['files']
+            if not should_ignore(file, config['ignore'], gitignore_patterns)
+        ]
     else:
         all_files = get_python_files('.')
-        files_to_lint = [file for file in all_files if not should_ignore(file, config['ignore'], gitignore_patterns)]
+        files_to_lint = [
+            file
+            for file in all_files
+            if not should_ignore(file, config['ignore'], gitignore_patterns)
+        ]
 
     # Limit the number of files if 'max' is set
     if config['max'] > 0:
-        files_to_lint = files_to_lint[:config['max']]
+        files_to_lint = files_to_lint[: config['max']]
 
     if not files_to_lint:
         print('No files to lint.')

@@ -12,7 +12,9 @@ class TestTodoAPI(unittest.TestCase):
         generate_testdata()
 
     def login(self, username, password):
-        return self.client.post('/login', json={'username': username, 'password': password})
+        return self.client.post(
+            '/login', json={'username': username, 'password': password}
+        )
 
     def test_login(self):
         response = self.login('admin', 'admin')
@@ -26,7 +28,9 @@ class TestTodoAPI(unittest.TestCase):
 
     def test_add_todo(self):
         self.login('admin', 'admin')
-        response = self.client.post('/todos', json={'title': 'Test Todo', 'is_completed': False})
+        response = self.client.post(
+            '/todos', json={'title': 'Test Todo', 'is_completed': False}
+        )
         assert response.status_code == 201
         assert json.loads(response.data)['message'] == 'Todo item created'
 
@@ -46,7 +50,10 @@ class TestTodoAPI(unittest.TestCase):
         first_todo_id = todos[0]['item_id']
 
         # Aktualisiere das Todo-Element mit der ersten ID
-        response = self.client.put(f'/todos/{first_todo_id}', json={'title': 'Updated Todo', 'is_completed': True})
+        response = self.client.put(
+            f'/todos/{first_todo_id}',
+            json={'title': 'Updated Todo', 'is_completed': True},
+        )
         assert response.status_code == 200
         assert json.loads(response.data)['message'] == 'Item updated'
 
