@@ -3,19 +3,23 @@ from user import User
 
 
 class UserDao:
+
     def __init__(self, db_file):
         self.conn = sqlite3.connect(db_file, check_same_thread=False)
         self.cursor = self.conn.cursor()
 
     def create_user_table(self):
-        self.cursor.execute('''DROP TABLE IF EXISTS users''')
+        self.cursor.execute("""DROP TABLE IF EXISTS users""")
         self.cursor.execute(
-            '''CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT, email TEXT, password TEXT)''')
+            """CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT, email TEXT, password TEXT)"""
+        )
         self.conn.commit()
 
     def add_user(self, user):
-        self.cursor.execute("INSERT INTO users (username, email, password) VALUES (?, ?, ?)",
-                            (user.username, user.email, user.password))
+        self.cursor.execute(
+            "INSERT INTO users (username, email, password) VALUES (?, ?, ?)",
+            (user.username, user.email, user.password),
+        )
         self.conn.commit()
 
     def get_user_by_id(self, user_id):

@@ -10,9 +10,11 @@ app.secret_key = 'supersecretkey'
 login_manager = LoginManager()
 login_manager.init_app(app)
 
+
 @login_manager.user_loader
 def load_user(user_id):
     from userDao import UserDao
+
     user_dao = UserDao('todo_example.db')
     return user_dao.get_user_by_id(int(user_id))
 
