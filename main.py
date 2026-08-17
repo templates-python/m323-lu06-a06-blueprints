@@ -1,3 +1,8 @@
+"""Todo-Liste mit Blueprints.
+
+Aufgabenstellung: https://wiki.bzz.ch/modul/m323/learningunits/lu06/aufgaben/blueprints
+"""
+
 from flask import Flask, jsonify, request
 from flask_login import LoginManager, login_required, login_user, logout_user, current_user
 
