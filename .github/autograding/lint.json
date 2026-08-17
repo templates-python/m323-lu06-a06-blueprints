@@ -1,11 +1,11 @@
 {
   "files": [
     "user.py",
-    "todoBlueprint.py",
-    "todoDao.py",
-    "todoItem.py",
-    "userBlueprint.py",
-    "userDao.py",
+    "todo_blueprint.py",
+    "todo_dao.py",
+    "todo_item.py",
+    "user_blueprint.py",
+    "user_dao.py",
     "main.py"
   ],
   "ignore": [],

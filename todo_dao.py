@@ -1,5 +1,5 @@
 import sqlite3
-from todoItem import TodoItem
+from todo_item import TodoItem
 
 
 class TodoDao:
