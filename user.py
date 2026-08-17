@@ -1,3 +1,5 @@
+"""Datenmodell eines Benutzerkontos."""
+
 from flask_login import UserMixin
 
 

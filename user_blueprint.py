@@ -1,3 +1,5 @@
+"""Routen für Registrierung und Anmeldung."""
+
 from flask import Blueprint, request, jsonify
 from flask_login import login_required, login_user, logout_user
 from user_dao import UserDao

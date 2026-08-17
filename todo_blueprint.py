@@ -1,6 +1,7 @@
-from flask import Blueprint
+"""Routen für die ToDo-Einträge."""
+
 from flask_login import login_required
-from flask import jsonify, request
+from flask import Blueprint, jsonify, request
 from todo_dao import TodoDao
 from todo_item import TodoItem
 

@@ -1,3 +1,5 @@
+"""Datenmodell eines ToDo-Eintrags."""
+
 from dataclasses import dataclass
 
 
